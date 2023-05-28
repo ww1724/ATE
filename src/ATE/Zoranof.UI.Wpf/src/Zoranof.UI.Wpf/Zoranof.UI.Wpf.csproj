@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	  <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>disable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Zoranof.UI.Wpf</Title>
+    <Version>0.0.7</Version>
+    <Authors>Zoran</Authors>
+    <Company>Zoranof</Company>
+    <PackageProjectUrl>https://github.com/ww1724/Zoranof.UI.Wpf</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ww1724/Zoranof.UI.Wpf</RepositoryUrl>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\iconfont.ttf" />
+    <Resource Include="Resources\lxwk.ttf" />
+    <Resource Include="Resources\test-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+
+	<Target Name="CopyPackage" AfterTargets="Pack" Condition="false">
+		<Delete Files="$(SolutionDir)..\package\nuget\*" />
+		<Exec Command="del /q /f $(SolutionDir)..\package\nuget\*" />
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(SolutionDir)..\package\nuget" />
+		<Exec Command="dotnet nuget push ..\..\package\nuget\*.nupkg --api-key oy2pd5w3nanzox7ouwbaz63f6qb7nxnepdx2xj7wq5tbue --source https://api.nuget.org/v3/index.json" />
+	</Target>
+
+</Project>

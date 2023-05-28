@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ColorGray0" Color="#fff"/>
+    <SolidColorBrush x:Key="ColorGray1" Color="#fdfdfd"/>
+    <SolidColorBrush x:Key="ColorGray2" Color="#f7f7f7"/>
+    <SolidColorBrush x:Key="ColorGray3" Color="#eff2f3"/>
+    <SolidColorBrush x:Key="ColorGray4" Color="#ccc"/>
+    <SolidColorBrush x:Key="ColorGray5" Color="#999"/>
+    <SolidColorBrush x:Key="ColorGray6" Color="#666"/>
+    <SolidColorBrush x:Key="ColorGray7" Color="#333"/>
+    <SolidColorBrush x:Key="ColorGray8" Color="#222"/>
+    <SolidColorBrush x:Key="ColorGray9" Color="#1C1C1C"/>
+    <SolidColorBrush x:Key="ColorGrayA" Color="#000"/>
+
+
+    <Color x:Key="BoxShadowColor">#ccc</Color>
+    <SolidColorBrush x:Key="DefaultTextColor" Color="#aaa"/>
+    <SolidColorBrush x:Key="ActiveTextColor"
+                     Color="#F1f1f1" />
+    <SolidColorBrush x:Key="InverseTextColor" Color="#333"/>
+    <SolidColorBrush x:Key="DefaultBgColor" Color="#141414"/>
+    <SolidColorBrush x:Key="BgColor2" Color="#1C1E1F"/>
+    <SolidColorBrush x:Key="BgColor3" Color="#17191A"/>
+    <SolidColorBrush x:Key="BgColor4" Color="#323337"/>
+
+
+
+    <Color x:Key="PinkColor">#f18bb3</Color>
+    <SolidColorBrush x:Key="PinkColorBrush" Color="{DynamicResource PinkColor}"/>
+    <Color x:Key="RedColor">#ed7689</Color>
+    <SolidColorBrush x:Key="RedColorBrush" Color="{DynamicResource RedColor}"/>
+    <Color x:Key="PurpleColor">#cfacc5</Color>
+    <SolidColorBrush x:Key="PurpleColorBrush" Color="{DynamicResource PurpleColor}"/>
+    <Color x:Key="BlueColor">#3786F6</Color>
+    <SolidColorBrush x:Key="BlueColorBrush" Color="{DynamicResource BlueColor}"/>
+    <Color x:Key="YellowColor">#ffe175</Color>
+    <SolidColorBrush x:Key="YellowColorBrush" Color="{DynamicResource YellowColor}"/>
+    <Color x:Key="GreenColor">#86c59d</Color>
+    <SolidColorBrush x:Key="GreenColorBrush" Color="{DynamicResource GreenColor}"/>
+    <Color x:Key="OrangeColor">#f0a387</Color>
+    <SolidColorBrush x:Key="OrangeColorBrush" Color="{DynamicResource OrangeColor}"/>
+
+    <Color x:Key="SuccessColor">#00ff00</Color>
+    <SolidColorBrush x:Key="SuccessColorBrush" Color="{DynamicResource SuccessColor}"/>
+    <Color x:Key="ErrorColor">#ff4757</Color>
+    <SolidColorBrush x:Key="ErrorColorBrush" Color="{DynamicResource ErrorColor}"/>
+    <Color x:Key="WarningColor">#eccc68</Color>
+    <SolidColorBrush x:Key="WarningColorBrush" Color="{DynamicResource WarningColor}"/>
+
+
+    <Color x:Key="DataGridHeaderBgColor">#EAEAEA</Color>
+    <SolidColorBrush x:Key="DataGridHeaderBgColorBrush" Color="{DynamicResource DataGridHeaderBgColor}"/>
+    <Color x:Key="DataGridCellBgColor">#ffffff</Color>
+    <SolidColorBrush x:Key="DataGridCellBgColorBrush" Color="{DynamicResource DataGridCellBgColor}"/>
+    <Color x:Key="DataGridSelectedBgColor">#F0F0F0</Color>
+    <SolidColorBrush x:Key="DataGridSelectedBgColorBrush" Color="{DynamicResource DataGridSelectedBgColor}"/>
+
+    <Color x:Key="DialogMenuBg">#1c1c1c</Color>
+    <SolidColorBrush x:Key="DialogMenuBgColorBrush" Color="{DynamicResource DialogMenuBg}"/>
+    <Color x:Key="DialogMenuActiveBg">#232323</Color>
+    <SolidColorBrush x:Key="DialogMenuBgActiveColorBrush" Color="{DynamicResource DialogMenuActiveBg}"/>
+    <Color x:Key="DialogPageBgColor">#1c1c1c</Color>
+    <SolidColorBrush x:Key="DialogPageBgColorBrush" Color="{DynamicResource DialogPageBgColor}" />
+    <Color x:Key="DialogBorderColor">#2D2D2D</Color>
+    <SolidColorBrush x:Key="DialogBorerColorBrush" Color="{DynamicResource DialogBorderColor}" />
+
+    <SolidColorBrush x:Key="ConsoleBgColorBrush" Color="#212231"/> 
+
+</ResourceDictionary>

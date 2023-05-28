@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	  <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>disable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Zoranof.UI.Wpf</Title>
+    <Version>0.0.1</Version>
+    <Authors>Zoran</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+
+	<Target Name="CopyPackage" AfterTargets="Pack">
+		<Copy  SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"    
+			   DestinationFolder="$(SolutionDir)..\package\nuGet"         />
+		<Exec Command="call $(SolutionDir)nuget.bat"/>
+	</Target>
+
+</Project>

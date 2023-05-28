@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:converters="clr-namespace:Zoranof.UI.Wpf.Converters">
+
+    <converters:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
+    <converters:Bools2VisibilityConverter x:Key="Bools2VisibilityConverter"/>
+    <converters:DataGridRowNumberConverter x:Key="DataGridRowNumberConverter"/>
+    <converters:WindowMaximized2Margin x:Key="WindowMaximized2MarginConverter"/>
+    <converters:Null2VisibilityConverter x:Key="Null2VisibilityConverter"/>
+    <converters:String2LengthConverter x:Key="String2LengthConverter" />
+    <converters:Path2LastConverter x:Key="Path2LastConverter" />
+    <converters:Var2StringConverter x:Key="Var2StringConverter" />
+    <converters:WindowMaximized2BorderThickness x:Key="WindowMaximized2BorderThickness"/>
+    <converters:Nulls2VisibilityConverter x:Key="Nulls2VisibilityConverter" />
+
+    <!-- Assets -->
+    <FontFamily x:Key="LxwkFontFamily">
+        pack://application:,,,/Zoranof.UI.Wpf;component/Resources/lxwk.ttf#LXGW WenKai
+    </FontFamily>
+
+    <FontFamily x:Key="IconFontFamily">
+        pack://application:,,,/Zoranof.UI.WPf;component/Resources/iconfont.ttf#iconfont
+    </FontFamily>
+
+    <BitmapImage x:Key="TestAppIcon" UriSource="pack://application:,,,/Zoranof.UI.Wpf;component/Resources/test-icon.png"/>
+
+
+</ResourceDictionary>
