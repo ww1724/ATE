@@ -155,9 +155,11 @@ namespace Zoranof.Workflow
                         }
                     }
 
+
+                    var t = Items[i];
                     Items.RemoveAt(i);
 
-                    OnItemRemoved(new WorkflowEventArgs { Item = Items[i] });
+                    OnItemRemoved(new WorkflowEventArgs { Item = t });
                 }
             }
 

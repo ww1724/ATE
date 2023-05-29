@@ -24,7 +24,7 @@ namespace ATE.ViewModels.Dialog
 
         public void ConfirmCommandAction()
         {
-            DialogResult dialogResult = new DialogResult();
+            DialogResult dialogResult = new DialogResult(ButtonResult.Yes);
             dialogResult.Parameters.Add("Name", Name);
             RequestClose?.Invoke(dialogResult);
         }

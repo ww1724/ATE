@@ -10,7 +10,7 @@
         <StackPanel VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
                 <TextBlock Text="项目名称" FontSize="14"/>
-                <TextBox Text="{Binding Name}" Width="200" Height="45" Margin="15 0"/>
+                <TextBox Text="{Binding Name}" Width="200" Height="30" Margin="15 8" FontSize="16" VerticalContentAlignment="Center"/>
                 <Button Width="80" HorizontalAlignment="Right" Command="{Binding ConfirmCommand}">确认</Button>
             </StackPanel>
             

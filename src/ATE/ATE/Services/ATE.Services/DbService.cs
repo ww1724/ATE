@@ -1,10 +1,10 @@
-﻿using ATE.Service.Entities;
-using ATE.Service.Interface;
+﻿using ATE.Service.Interface;
 using ATE.Services.Entities;
 using ATE.Share;
 using SqlSugar;
 using System.Collections.Generic;
 using System.Configuration;
+using ATE.Service.Entities;
 
 namespace ATE.Service
 {
@@ -41,17 +41,6 @@ namespace ATE.Service
                 typeof(UserEntity),
                 typeof(TestingCodeEntity),
                 typeof(TestingProjectEntity));
-
-            //typeof(GeneralDataEntity),
-            //typeof(ConfigurationEntity),
-
-
-            //typeof(TestingDataEntity),
-            //typeof(TestingProject),
-            //typeof(TestingAction),
-            //typeof(TestingRecord),
-            //typeof(ProductEntity));
-
             if (!sugarClient.Queryable<UserEntity>().Any())
             {
                 sugarClient.InsertableByObject(new UserEntity

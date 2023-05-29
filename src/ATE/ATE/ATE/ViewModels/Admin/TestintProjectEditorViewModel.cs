@@ -87,7 +87,17 @@ namespace ATE.ViewModels.Admin
         {
             DialogService.ShowDialog(Constants.NewProjectDialog, new DialogParameters(), (IDialogResult dr) =>
             {
-                MessageBox.Show($"{dr.Parameters.GetValue<string>("Name")}");
+                if (dr.Result == ButtonResult.Yes)
+                {
+                    string title = dr.Parameters.GetValue<string>("Name");
+                    DbService.Insert<TestingProjectEntity>(new TestingProjectEntity
+                    {
+                        Title = title,
+                        ProjectId = Guid.NewGuid().ToString(),
+                        ClassType = ""
+                    });
+                }
+
             });
         }
 

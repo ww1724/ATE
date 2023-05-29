@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATE.Store", "ATE.Store\ATE.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoranof.Workflow", "Zoranof.Workflow\Zoranof.Workflow.csproj", "{AD4E745C-243B-4328-8EB7-BDBF25E7D75F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATE.Dal", "ATE.Dal\ATE.Dal.csproj", "{DB3FFA8B-96B3-4185-920B-41E66D9996BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{AD4E745C-243B-4328-8EB7-BDBF25E7D75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD4E745C-243B-4328-8EB7-BDBF25E7D75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD4E745C-243B-4328-8EB7-BDBF25E7D75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3FFA8B-96B3-4185-920B-41E66D9996BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3FFA8B-96B3-4185-920B-41E66D9996BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3FFA8B-96B3-4185-920B-41E66D9996BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3FFA8B-96B3-4185-920B-41E66D9996BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{7D8B3F5C-400B-4249-B9DB-19375E1B0EC6} = {FFF4A822-BDF5-4508-ABBE-122C304D551F}
 		{3EE0B64A-2EFA-4D01-B0DC-0CB8074DC529} = {5654ABA6-1C21-412E-96D6-7619D076A55F}
 		{AD4E745C-243B-4328-8EB7-BDBF25E7D75F} = {FFF4A822-BDF5-4508-ABBE-122C304D551F}
+		{DB3FFA8B-96B3-4185-920B-41E66D9996BB} = {64A67169-BA0B-4C31-9CC2-74D9DD3387EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {546D5F54-A2B0-40D1-BFEB-06D29482E62F}

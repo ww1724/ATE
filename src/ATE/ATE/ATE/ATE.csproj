@@ -12,13 +12,16 @@
     <Resource Include="Resources\avatar.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ATE.Common\ATE.Common.csproj" />
+    <ProjectReference Include="..\..\ATE.Dal\ATE.Dal.csproj" />
     <ProjectReference Include="..\..\ATE.Share\ATE.Share.csproj" />
+    <ProjectReference Include="..\..\ATE.Test\ATE.Test.csproj" />
     <ProjectReference Include="..\..\Zoranof.UI.Wpf\src\Zoranof.UI.Wpf\Zoranof.UI.Wpf.csproj" />
     <ProjectReference Include="..\..\Zoranof.Workflow\Zoranof.Workflow.csproj" />
     <ProjectReference Include="..\Modules\ATE.Modules.ModuleName\ATE.Modules.ModuleName.csproj" />

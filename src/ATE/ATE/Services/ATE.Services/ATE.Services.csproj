@@ -7,10 +7,11 @@
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.12.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.78" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.80" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ATE.Dal\ATE.Dal.csproj" />
     <ProjectReference Include="..\..\..\ATE.Share\ATE.Share.csproj" />
     <ProjectReference Include="..\ATE.Services.Interfaces\ATE.Services.Interfaces.csproj" />
   </ItemGroup>

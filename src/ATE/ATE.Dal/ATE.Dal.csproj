@@ -3,12 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-	  <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ATE.Dal\ATE.Dal.csproj" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.80" />
   </ItemGroup>
 
 </Project>

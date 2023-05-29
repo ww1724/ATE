@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATE.Services.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Zoranof.Workflow.Common;
 
 namespace ATE.Views
 {
@@ -24,5 +26,20 @@ namespace ATE.Views
         {
             InitializeComponent();
         }
+
+        private void ListView_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (e.Source != null)
+                {
+                    var view = sender as ListView;
+                    if (view.SelectedItem == null) return;
+                    DataObject data = new DataObject(DataTypeExtension.DragDataModelFormat, (view.SelectedItem as TestingProjectEntity));
+                    DragDrop.DoDragDrop(view, data, DragDropEffects.Move);
+                }
+            }
+        }
+
     }
 }
