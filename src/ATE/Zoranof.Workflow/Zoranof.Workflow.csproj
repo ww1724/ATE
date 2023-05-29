@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Interfaces\**" />
+    <Compile Remove="Common\Interface\**" />
+    <EmbeddedResource Remove="Common\Interfaces\**" />
+    <EmbeddedResource Remove="Common\Interface\**" />
+    <None Remove="Common\Interfaces\**" />
+    <None Remove="Common\Interface\**" />
+    <Page Remove="Common\Interfaces\**" />
+    <Page Remove="Common\Interface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Steps\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
+    <PackageReference Include="WorkflowCore" Version="3.8.3" />
+    <PackageReference Include="WorkflowCore.Persistence.MySQL" Version="3.8.3" />
+  </ItemGroup>
+
+</Project>

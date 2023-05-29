@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Zoranof.Workflow.Common;
 
 namespace ATE.Views.Admin
 {
@@ -23,6 +24,20 @@ namespace ATE.Views.Admin
         public TestingProjectEditorView()
         {
             InitializeComponent();
+        }
+
+        private void NodeSelectTree_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (e.Source != null)
+                {
+                    var view = sender as ListView;
+                    if (view.SelectedItem == null) return;
+                    DataObject data = new DataObject(DataTypeExtension.DragDataModelFormat, (view.SelectedItem as NodeItemMeta).Type);
+                    DragDrop.DoDragDrop(view, data, DragDropEffects.Move);
+                }
+            }
         }
     }
 }

@@ -77,7 +77,7 @@
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="ListBoxItem">
-                                            <Expander IsExpanded="{Binding isExpand}">
+                                            <Expander IsExpanded="{Binding IsExpand}">
                                                 <Expander.Style>
                                                     <Style TargetType="Expander">
                                                         <Setter Property="Template">

@@ -3,6 +3,7 @@ using ATE.Stores;
 using Prism.Mvvm;
 using Prism.Ioc;
 using Prism.Regions;
+using ATE.Service.Interface;
 
 namespace ATE.ViewModels
 {
@@ -10,7 +11,9 @@ namespace ATE.ViewModels
     {
         public GlobalStore GlobalStore { get; set; }
            
-        public ShellViewModel(IRegionManager regionManager) : base(regionManager)
+        public IDbService DbService { get; set; }
+
+        public ShellViewModel(IRegionManager regionManager, IDbService dbService) : base(regionManager)
         {
             GlobalStore = ContainerLocator.Container.Resolve<GlobalStore>();
             

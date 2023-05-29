@@ -1,13 +1,17 @@
 ﻿using ATE.Common.Mvvm;
 using ATE.Modules.ModuleName;
+using ATE.Service;
+using ATE.Service.Interface;
 using ATE.Services;
 using ATE.Services.Interfaces;
 using ATE.Share;
 using ATE.Stores;
 using ATE.ViewModels;
 using ATE.ViewModels.Admin;
+using ATE.ViewModels.Dialog;
 using ATE.Views;
 using ATE.Views.Admin;
+using ATE.Views.Dialogs;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
@@ -32,10 +36,11 @@ namespace ATE
         {
             // services
             containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+            containerRegistry.RegisterSingleton<IDbService, DbService>();
+            containerRegistry.RegisterSingleton<ILoggerService, LoggerService>();
             // Stores
             containerRegistry.RegisterSingleton<IViewModel, GlobalStore>();
             containerRegistry.RegisterSingleton<IViewModel, TestingStore>();
-
             // View Locator
             containerRegistry.RegisterSingleton<IViewModel, ShellViewModel>(Constants.Shell);
             containerRegistry.RegisterForNavigation<TestView, TestViewModel>(Constants.TestBoard);
@@ -46,7 +51,8 @@ namespace ATE
             containerRegistry.RegisterForNavigation<SettingsView, SettingsViewModel>(Constants.Settings);
             containerRegistry.RegisterForNavigation<DeviceMangeView, DeviceManageViewModel>(Constants.DeviceManage);
             containerRegistry.RegisterForNavigation<DatabaseView, DatabaseViewModel>(Constants.Database);
-
+            //dialogs
+            containerRegistry.RegisterDialog<NewProjectDialog, NewProjectDialogViewModel>(Constants.NewProjectDialog);
             // regions
             ContainerLocator.Container.Resolve<RegionManager>().RegisterViewWithRegion(Constants.MainRegion, Constants.TestBoard);
         }

@@ -6,8 +6,5 @@
              xmlns:local="clr-namespace:ATE.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="History View" FontSize="48"/>
-
-    </Grid>
+    <Grid/>
 </UserControl>
