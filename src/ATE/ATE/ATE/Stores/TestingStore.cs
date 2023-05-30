@@ -5,12 +5,42 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATE.Stores
 {
+    public class TestingResult : BindableBase
+    {
+        private string name;
+        private string title;
+        private string description;
+        private List<object> channelResults;
+        private double minValue;
+        private double maxValue;
+
+        public string Name { get { return name; } set { SetProperty(ref name, value); } }
+
+        public string Title { get { return title; } set { SetProperty(ref title, value); } }
+
+        public string Description { get { return description; } set { SetProperty(ref description, value); } }
+
+        public double MinValue { get { return minValue; } set { SetProperty(ref minValue, value); } }
+
+        public double MaxValue { get { return maxValue; } set { SetProperty(ref maxValue, value); } }
+
+        public List<object> ChannelResults { get { return channelResults; } set { SetProperty(ref channelResults, value); } }
+    }
+
+    //public class TestingParameter : BindableBase
+    //{
+    //    public string Name { get; set; }
+    //    public string Title { get; set; }
+    //    public bool ParameterToAllChannel { get; set; } = true;
+    //    public Type Type { get; set; }
+    //    public object Value { get; set; }
+
+    //    public List<object> ChannelValues { get; set; } = new List<object>();
+    //}
+
     public class TestingParameter : BindableBase
     {
         private string name;
@@ -30,7 +60,7 @@ namespace ATE.Stores
 
         public double MaxValue { get { return maxValue; } set { SetProperty(ref maxValue, value); } }
 
-        public List<object> ChannelResults { get { return channelResults; } set { SetProperty(ref channelResults, value);} }
+        public List<object> ChannelResults { get { return channelResults; } set { SetProperty(ref channelResults, value); } }
     }
 
     public class TestingStep : BindableBase
@@ -46,11 +76,19 @@ namespace ATE.Stores
         public string Description { get { return description; } set { SetProperty(ref description, value); } }
         public bool IsToTest { get { return isToTest; } set { SetProperty(ref isToTest, value); } }
         public bool IsExpand { get { return isExpand; } set { SetProperty(ref isExpand, value); } }
+
         private ObservableCollection<TestingParameter> parameters;
         public ObservableCollection<TestingParameter> Parameters
         {
             get { return parameters; }
             set { SetProperty(ref parameters, value); }
+        }
+
+        private ObservableCollection<TestingResult> results;
+        public ObservableCollection<TestingResult> Results
+        {
+            get { return results; }
+            set { SetProperty(ref results, value); }
         }
     }
 
@@ -110,13 +148,53 @@ namespace ATE.Stores
             {
                 Steps = new ObservableCollection<TestingStep>()
                 {
-                   a, a, a, a,a ,a ,a,a ,a ,a,a,a,a,a, a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,new TestingStep()
-            {
-                Title = "300P调光最大",
-                Parameters = new ObservableCollection<TestingParameter>{ }
-            }
                 }
             };
+
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "启动测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "输入对输出高压测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "输入对地高压测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "输出对地高压测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "小负载测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "大负载测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "短路&恢复测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "300P调光测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "153P调光测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "0-10V调光测试"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
 
             ExpandAllCommand = new DelegateCommand(ExpandAllCommandAction);
             ShrinkAllCommand = new DelegateCommand(ShrinkAllCommandAction);
@@ -139,7 +217,6 @@ namespace ATE.Stores
                 item.IsExpand = true;
             }
         }
-
 
         void ShrinkAllCommandAction()
         {

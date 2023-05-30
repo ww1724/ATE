@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATE.Test
+namespace ATE.Test.Contract
 {
-    public interface ITestingItem
+    public interface ITestingProject
     {
-        public string Name { get; set; }
-
         public string Title { get; set; }
-
-        public string StepClass { get; set; }
 
         public abstract void Run();
     }

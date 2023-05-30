@@ -11,7 +11,7 @@ namespace ATE.ViewModels
 
     public class TestViewModel : RegionViewModelBase, IViewModel
     {
-        public TestingStore TestingStore { get; set; } 
+        public TestingStore TestingStore { get; set; }
 
         public TestViewModel(IRegionManager regionManager) : base(regionManager)
         {

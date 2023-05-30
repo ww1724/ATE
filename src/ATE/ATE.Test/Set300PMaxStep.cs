@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATE.Test.Contract;
 
 namespace ATE.Test
 {
-    public class Set300PMaxStep : ITestingItem
+    public class Set300PMaxStep : ITestingProject
     {
         public string Name {get;set;}
         public string Title { get; set; }

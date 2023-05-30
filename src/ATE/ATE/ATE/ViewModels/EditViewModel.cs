@@ -2,14 +2,18 @@
 using ATE.Service;
 using ATE.Service.Interface;
 using ATE.Services.Entities;
+using ATE.Test.Contract;
 using Prism.Commands;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Zoranof.Workflow;
+using Zoranof.WorkFlow;
 
 namespace ATE.ViewModels
 {
@@ -34,10 +38,31 @@ namespace ATE.ViewModels
 
         public DelegateCommand ViewLoadedCommand { get; set; }
 
-        public void ViewLoadedAction()
+        public async void ViewLoadedAction()
         {
-            var data =  DbService.Query<TestingProjectEntity>();
-            TestingProjects = new ObservableCollection<TestingProjectEntity>(data);
+
+            // 加载程序集中测试项
+            await Task.Run(() =>
+            {
+                var t = new ObservableCollection<TestingProjectEntity>();
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                foreach (var assembly in assemblies)
+                {
+                    var types = assembly.GetTypes().Where(x => x.GetInterfaces().Contains(typeof(ITestingProject))).ToList();
+                    foreach (var x in types)
+                    {
+                        var attr = x.GetCustomAttribute<TestingProjectAttribute>();
+                        if (attr == null || attr.Group == "Template") continue;
+                        var project = new TestingProjectEntity();
+                        project.Title = attr.Title;
+                        t.Add(project);
+                    }
+                }
+                TestingProjects = new ObservableCollection<TestingProjectEntity>(t);
+            });
+
+            //var data =  DbService.Query<TestingProjectEntity>();
+            //TestingProjects = new ObservableCollection<TestingProjectEntity>(data);
         }
     }
 }

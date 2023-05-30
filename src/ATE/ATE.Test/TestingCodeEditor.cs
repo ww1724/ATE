@@ -8,20 +8,16 @@ namespace ATE.Test
 {
     public class TestingCodeEditor : Control
     {
-
         public TestingCodeEditor()
         {
             Background = Brushes.LightCyan;
         }
-
-
 
         #region public slots
 
         #endregion
 
         #region private functions
-
 
         #endregion
 
