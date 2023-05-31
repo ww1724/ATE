@@ -12,59 +12,58 @@
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0">
             <StackPanel>
-                <Button Command="{Binding NewTestingProjectDialogCommand}" Content="New Project"/> 
+                <Button Command="{Binding NewTestingProjectDialogCommand}" Content="New Project"/>
+                <TextBlock Text="当前项目"/>
+                <ListView  Width="235" x:Name="NodeSelectTree" MouseMove="NodeSelectTree_MouseMove" BorderThickness="0" Background="#fff" ItemsSource="{Binding NodeItemMetas}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Background" Value="#fff" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="BorderThickness" Value="3" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border Margin="0 5" Width="200"  Height="40" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <Grid>
+                                                <Border Background="#fff" CornerRadius="4">
+                                                    <Border.Effect>
+                                                        <DropShadowEffect BlurRadius="4" ShadowDepth="-2" Color="#000" Opacity="0.5" />
+                                                    </Border.Effect>
+                                                </Border>
+                                                <StackPanel Orientation="Horizontal" Margin="5">
+                                                    <TextBlock Text="&#xe847;" FontFamily="{StaticResource IconFontFamily}" FontSize="16" Foreground="#773E16" Margin="15 0 0 0"/>
+                                                    <TextBlock Text="{Binding Title}" FontSize="14" Foreground="#773E16" Margin="10 0 0 0"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="White"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
             </StackPanel>
         </Border>
-
-        <ListView Grid.Column="1" Width="235" x:Name="NodeSelectTree" MouseMove="NodeSelectTree_MouseMove" BorderThickness="0" Background="#fff" ItemsSource="{Binding NodeItemMetas}">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="Background" Value="#fff" />
-                    <Setter Property="BorderBrush" Value="Transparent" />
-                    <Setter Property="BorderThickness" Value="3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListBoxItem">
-                                <Border Margin="0 5" Width="200"  Height="40" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                                    <Grid>
-                                        <Border Background="#fff" CornerRadius="4">
-                                            <Border.Effect>
-                                                <DropShadowEffect BlurRadius="4" ShadowDepth="-2" Color="#000" Opacity="0.5" />
-                                            </Border.Effect>
-                                        </Border>
-                                        <StackPanel Orientation="Horizontal" Margin="5">
-                                            <TextBlock Text="&#xe847;" FontFamily="{StaticResource IconFontFamily}" FontSize="16" Foreground="#773E16" Margin="15 0 0 0"/>
-                                            <TextBlock Text="{Binding Title}" FontSize="14" Foreground="#773E16" Margin="10 0 0 0"/>
-                                        </StackPanel>
-                                    </Grid>
-
-                                </Border>
-
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="White"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
         <!--<workflowcontrols:NodeTree x:Name="NodeSelectTree" />-->
         <workflow:WorkflowEditor x:Name="CodeEditor" 
-                                 Grid.Column="2"/>
+                                 Grid.Column="1"/>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Margin="15">
             <Button>保存程序</Button>

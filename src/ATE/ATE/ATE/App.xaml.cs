@@ -6,6 +6,7 @@ using ATE.Services;
 using ATE.Services.Interfaces;
 using ATE.Share;
 using ATE.Stores;
+using ATE.Test;
 using ATE.ViewModels;
 using ATE.ViewModels.Admin;
 using ATE.ViewModels.Dialog;
@@ -38,6 +39,8 @@ namespace ATE
             containerRegistry.RegisterSingleton<IMessageService, MessageService>();
             containerRegistry.RegisterSingleton<IDbService, DbService>();
             containerRegistry.RegisterSingleton<ILoggerService, LoggerService>();
+
+            containerRegistry.RegisterSingleton<DeviceManager>();
             // Stores
             containerRegistry.RegisterSingleton<IViewModel, GlobalStore>();
             containerRegistry.RegisterSingleton<IViewModel, TestingStore>();

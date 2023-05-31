@@ -2,16 +2,10 @@
 using ATE.Common.Mvvm;
 using ATE.Share;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Regions;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 
 namespace ATE.Stores
 {
