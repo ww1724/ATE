@@ -51,7 +51,7 @@ namespace ATE.Stores
                 new MenuItem { Icon=(char)0xe807, Text="数据中心", Path=Constants.History } ,
                 new MenuItem { Icon=(char)0xe66d, Text="控制中心", Path=Constants.Admin } ,
             };
-
+            CurrentMenu = MenuItems.FirstOrDefault();
 
             // 默认用户登录
             var user = DbService.Query<UserEntity>().Where(x => x.Name == "测试用户1").FirstOrDefault();
@@ -62,7 +62,7 @@ namespace ATE.Stores
             }
             CurrentUser = new User { Name = user.Name, Role = user.Role };
 
-            CurrentMenu = MenuItems.FirstOrDefault();
+            
             NavigateToCommand = new DelegateCommand<string>(NavigateToCommandAction);
             ShowLoginDialogCommand = new DelegateCommand(ShowLoginDialog);
         }
