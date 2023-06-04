@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ATE.Controls"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:ATE.Controls" xmlns:viewmodels="clr-namespace:ATE.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
              mc:Ignorable="d" 
              Height="45"
              d:DesignWidth="1200">
@@ -77,15 +78,21 @@
                 </Border>
 
                 <Border x:Name="UserWidget" Cursor="Hand" Margin="10 0 10 0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding GlobalStore.ShowLoginDialogCommand }"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Grid>
-                        <Image Source="pack://application:,,,/ATE;component/Resources/avatar.jpg"  Width="30" Height="30">
+                        <TextBlock Text="{Binding GlobalStore.CurrentUser.Name}" Foreground="#ccc" ToolTip="切换用户"/>
+                        <!--<Image Source="pack://application:,,,/ATE;component/Resources/avatar.jpg"  Width="30" Height="30">
                             <Image.Clip>
                                 <EllipseGeometry
                                         Center="15, 15"
                                         RadiusX="15"
                                         RadiusY="15" />
                             </Image.Clip>
-                        </Image>
+                        </Image>-->
                     </Grid>
                 </Border>
             </StackPanel>

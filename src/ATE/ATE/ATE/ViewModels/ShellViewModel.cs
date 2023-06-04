@@ -11,16 +11,10 @@ namespace ATE.ViewModels
     {
         public GlobalStore GlobalStore { get; set; }
            
-        public IDbService DbService { get; set; }
-
-        public ShellViewModel(IRegionManager regionManager, IDbService dbService) : base(regionManager)
+        public ShellViewModel(IRegionManager regionManager) : base(regionManager)
         {
-            GlobalStore = ContainerLocator.Container.Resolve<GlobalStore>();
-            
+            GlobalStore = ContainerLocator.Container.Resolve<GlobalStore>();  
         }
-
-       
-
 
     }
 }

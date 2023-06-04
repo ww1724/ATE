@@ -1,7 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ATE;component/Resources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <SolidColorBrush x:Key="AppBgColor" Color="#3B4864"/>
 
     <SolidColorBrush x:Key="MenuHoverBg" Color="#262F43"/>
@@ -21,10 +24,14 @@
     <SolidColorBrush x:Key="InverseTextColor" Color="#D8DAE1"/>
 
     <Style TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource DefaultTextColor}" />
+        <!--<Setter Property="Foreground" Value="{DynamicResource DefaultTextColor}" />-->
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="{StaticResource LxwkFontFamily}" />
         <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="Control">
+        <Setter Property="Cursor" Value="Hand" />
     </Style>
 
 </ResourceDictionary>

@@ -16,6 +16,7 @@
         public const string Settings = "Main.View.Settings";
         public const string Database = "Main.View.Database";
 
+        public const string LoginDialog = "Main.Dialog.Login";
         public const string NewProjectDialog = "Main.Dialog.NewProjectDialog";
     }
 }

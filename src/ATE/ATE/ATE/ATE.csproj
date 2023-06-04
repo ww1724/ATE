@@ -5,17 +5,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="lxwk.ttf" />
     <None Remove="Resources\avatar.jpg" />
     <None Remove="Resources\iconfont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\lxwk.ttf" />
     <Resource Include="Resources\avatar.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="HandyControls" Version="3.4.5" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="WpfExtensions.Binding" Version="1.0.1" />
+    <PackageReference Include="WpfExtensions.Xaml" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ATE.Common\ATE.Common.csproj" />

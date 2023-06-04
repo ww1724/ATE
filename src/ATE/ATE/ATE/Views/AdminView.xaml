@@ -31,8 +31,7 @@
                                         <TextBlock HorizontalAlignment="Center">测试项管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}" 
-                                        Content="前往"
+                                <Button Content="前往"
                                         Command="{Binding GlobalStore.NavigateToCommand}" CommandParameter="{x:Static share:Constants.TestProject}"/>
                             </StackPanel>
                         </Border>
@@ -46,7 +45,7 @@
                                         <TextBlock HorizontalAlignment="Center">配置管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button>前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -59,7 +58,7 @@
                                         <TextBlock HorizontalAlignment="Center">数据库管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button >前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -72,7 +71,7 @@
                                         <TextBlock HorizontalAlignment="Center">程序管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button >前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -85,7 +84,7 @@
                                         <TextBlock HorizontalAlignment="Center">用户管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button>前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -98,7 +97,7 @@
                                         <TextBlock HorizontalAlignment="Center">设备管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button>前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -111,7 +110,7 @@
                                         <TextBlock HorizontalAlignment="Center">日志管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button>前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
@@ -124,7 +123,7 @@
                                         <TextBlock HorizontalAlignment="Center">测试数据管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button Style="{StaticResource LinkButtonStyle}">前往</Button>
+                                <Button>前往</Button>
                             </StackPanel>
                         </Border>
                     </UniformGrid>

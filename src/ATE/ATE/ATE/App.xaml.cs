@@ -55,6 +55,7 @@ namespace ATE
             containerRegistry.RegisterForNavigation<DeviceMangeView, DeviceManageViewModel>(Constants.DeviceManage);
             containerRegistry.RegisterForNavigation<DatabaseView, DatabaseViewModel>(Constants.Database);
             //dialogs
+            containerRegistry.RegisterDialog<LoginView, LoginViewModel>(Constants.LoginDialog);
             containerRegistry.RegisterDialog<NewProjectDialog, NewProjectDialogViewModel>(Constants.NewProjectDialog);
             // regions
             ContainerLocator.Container.Resolve<RegionManager>().RegisterViewWithRegion(Constants.MainRegion, Constants.TestBoard);

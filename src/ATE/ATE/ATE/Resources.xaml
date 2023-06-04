@@ -3,4 +3,8 @@
     <FontFamily x:Key="ATEIconFamily">
         pack://application:,,,/ATE;component/Resources/iconfont.ttf#iconfont
     </FontFamily>
+
+    <FontFamily x:Key="LxwkFontFamily">
+        pack://application:,,,/Zoranof.UI.Wpf;component/Resources/lxwk.ttf#LXGW WenKai
+    </FontFamily>
 </ResourceDictionary>
