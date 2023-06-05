@@ -42,8 +42,8 @@ namespace ATE
 
             containerRegistry.RegisterSingleton<DeviceManager>();
             // Stores
-            containerRegistry.RegisterSingleton<IViewModel, GlobalStore>();
-            containerRegistry.RegisterSingleton<IViewModel, TestingStore>();
+            containerRegistry.RegisterSingleton<GlobalStore>();
+            containerRegistry.RegisterSingleton<TestingStore>();
             // View Locator
             containerRegistry.RegisterSingleton<IViewModel, ShellViewModel>(Constants.Shell);
             containerRegistry.RegisterForNavigation<TestView, TestViewModel>(Constants.TestBoard);
@@ -57,6 +57,8 @@ namespace ATE
             //dialogs
             containerRegistry.RegisterDialog<LoginView, LoginViewModel>(Constants.LoginDialog);
             containerRegistry.RegisterDialog<NewProjectDialog, NewProjectDialogViewModel>(Constants.NewProjectDialog);
+            containerRegistry.RegisterDialog<ImportTestingProjectDialog, ImportTestingProjectDialogViewModel>(Constants.ImportTestingProjectDialog);
+            containerRegistry.RegisterDialog<ScanTestingProjectDialog, ScanTestingProjectDialogViewModel>(Constants.ScanTestingProjectDialog);
             // regions
             ContainerLocator.Container.Resolve<RegionManager>().RegisterViewWithRegion(Constants.MainRegion, Constants.TestBoard);
         }

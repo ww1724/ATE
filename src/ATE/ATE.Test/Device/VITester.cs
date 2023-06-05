@@ -37,6 +37,14 @@ namespace ATE.Test.Device
             return null;
         }
 
+        bool IDevice.ExecuteCommand(string command)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<bool> ExecuteCommandAsync(string command, params object[] paras)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

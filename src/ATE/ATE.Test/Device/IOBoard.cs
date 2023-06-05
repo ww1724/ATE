@@ -25,9 +25,14 @@ namespace ATE.Test.Device
             
         }
 
-        public void ExecuteCommand(string command)
+        public bool ExecuteCommand(string command)
         {
+            return true;
+        }
 
+        public Task<bool> ExecuteCommandAsync(string command, params object[] paras)
+        {
+            return Task.FromResult(true);
         }
 
         public object GetValue(string key)

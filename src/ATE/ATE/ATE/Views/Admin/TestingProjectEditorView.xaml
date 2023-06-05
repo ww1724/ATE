@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:pu="https://handyorg.github.io/handycontrol"
              xmlns:local="clr-namespace:ATE.Views.Admin"
              xmlns:workflow="clr-namespace:Zoranof.Workflow;assembly=Zoranof.Workflow"
              xmlns:prism="http://prismlibrary.com/" xmlns:viewmodels="clr-namespace:ATE.ViewModels.Admin" d:DataContext="{d:DesignInstance Type=viewmodels:TestintProjectEditorViewModel}"
@@ -17,7 +18,12 @@
 
         <Border Grid.Column="0">
             <StackPanel>
-                <Button Command="{Binding NewTestingProjectDialogCommand}" Content="New Project"/>
+                <StackPanel Orientation="Horizontal">
+                    <pu:ButtonGroup>
+                        <Button Command="{Binding NewTestingProjectDialogCommand}" Content="扫描测试项" Style="{StaticResource ButtonPrimary}"/>
+                        <Button Command="{Binding NewTestingProjectDialogCommand}" Content="导入测试项DLL"/>
+                    </pu:ButtonGroup>
+                </StackPanel>
                 <TextBlock Text="当前项目"/>
                 <ListView  Width="235" x:Name="NodeSelectTree" MouseMove="NodeSelectTree_MouseMove" BorderThickness="0" Background="#fff" ItemsSource="{Binding NodeItemMetas}">
                     <ListBox.ItemsPanel>

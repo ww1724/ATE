@@ -19,10 +19,17 @@ namespace ATE.Test
 
         public void AddDevice(IDevice device) { }
 
-        public void SendCommand(string deviceName, string command)
+        public bool SendCommand(string deviceName, string command)
         {
+            bool result = false;
             if (Devices.ContainsKey(deviceName))
-                Devices[deviceName].ExecuteCommand(command);
+               result =  Devices[deviceName].ExecuteCommand(command);
+            return result;
+        }
+
+        public Task<bool> SendCommandAsync(string deviceName, string command, params object[] args)
+        {
+            return Task.FromResult(true);
         }
     }
 }

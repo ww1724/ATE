@@ -17,6 +17,9 @@
         public const string Database = "Main.View.Database";
 
         public const string LoginDialog = "Main.Dialog.Login";
+        public const string ScanTestingProjectDialog = "Main.Dialog.ScanTestingProject";
+        public const string ImportTestingProjectDialog = "Main.Dialog.ImportTestingProject";
+
         public const string NewProjectDialog = "Main.Dialog.NewProjectDialog";
     }
 }

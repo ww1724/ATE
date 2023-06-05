@@ -16,7 +16,9 @@ namespace ATE.Test.Contract
 
         public abstract void InitializeDevice();
 
-        public abstract void ExecuteCommand(string command);
+        public abstract bool ExecuteCommand(string command);
+
+        public abstract Task<bool> ExecuteCommandAsync(string command, params object[] paras);
 
         public abstract object GetValue(string key);
     }

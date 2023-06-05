@@ -73,37 +73,44 @@ namespace ATE.ViewModels.Admin
             #endregion
 
             #region Actions & Commands
-            NewTestingProjectDialogCommand = new DelegateCommand(NewTestingProjectCommandDialogAction);
-            NewTestingProjectCommand = new DelegateCommand<string>(NewTestingProjectCommandAction);
+
+
+            //NewTestingProjectDialogCommand = new DelegateCommand(NewTestingProjectCommandDialogAction);
+            //NewTestingProjectCommand = new DelegateCommand<string>(NewTestingProjectCommandAction);
             #endregion
 
         }
 
-        public DelegateCommand NewTestingProjectDialogCommand { get;set; }
+        public DelegateCommand ScanTestingProjectsCommand { get; set; }
 
-        public DelegateCommand<string> NewTestingProjectCommand { get; set; }
+        public DelegateCommand ImportTestingProjectsCommand { get; set; }
 
-        public void NewTestingProjectCommandDialogAction()
-        {
-            DialogService.ShowDialog(Constants.NewProjectDialog, new DialogParameters(), (IDialogResult dr) =>
-            {
-                if (dr.Result == ButtonResult.Yes)
-                {
-                    string title = dr.Parameters.GetValue<string>("Name");
-                    DbService.Insert<TestingProjectEntity>(new TestingProjectEntity
-                    {
-                        Title = title,
-                        ProjectId = Guid.NewGuid().ToString(),
-                        ClassType = ""
-                    });
-                }
 
-            });
-        }
+        //public DelegateCommand NewTestingProjectDialogCommand { get;set; }
 
-        public void NewTestingProjectCommandAction(string name)
-        {
+        //public DelegateCommand<string> NewTestingProjectCommand { get; set; }
 
-        }
+        //public void NewTestingProjectCommandDialogAction()
+        //{
+        //    DialogService.ShowDialog(Constants.NewProjectDialog, new DialogParameters(), (IDialogResult dr) =>
+        //    {
+        //        if (dr.Result == ButtonResult.Yes)
+        //        {
+        //            string title = dr.Parameters.GetValue<string>("Name");
+        //            DbService.Insert<TestingProjectEntity>(new TestingProjectEntity
+        //            {
+        //                Title = title,
+        //                ProjectId = Guid.NewGuid().ToString(),
+        //                ClassType = ""
+        //            });
+        //        }
+
+        //    });
+        //}
+
+        //public void NewTestingProjectCommandAction(string name)
+        //{
+
+        //}
     }
 }
