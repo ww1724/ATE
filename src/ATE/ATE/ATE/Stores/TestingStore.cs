@@ -195,6 +195,74 @@ namespace ATE.Stores
             {
                 Title = "变压器放电"
             });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
+            TestingRecord.Steps.Add(new TestingStep()
+            {
+                Title = "变压器放电"
+            });
 
             ExpandAllCommand = new DelegateCommand(ExpandAllCommandAction);
             ShrinkAllCommand = new DelegateCommand(ShrinkAllCommandAction);

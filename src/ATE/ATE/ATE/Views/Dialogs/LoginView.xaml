@@ -14,10 +14,17 @@
                          Text="{Binding User.Name}"
                      hc:InfoElement.TitlePlacement="Left" 
                      hc:InfoElement.Title="用户名" Width="300" VerticalAlignment="Center"/>
+                <!--<hc:PasswordBox UnsafePassword="{Binding User.Password, Mode=TwoWay}" 
+                                hc:InfoElement.TitlePlacement="Left" 
+                                hc:InfoElement.Title="密码   " 
+                                ShowEyeButton="true"
+                                IsSafeEnabled="true"
+                                Width="300" VerticalAlignment="Center" Margin="0 10 0 0"/>-->
+                <!--<PasswordBox Password="{Binding User.Password}" hc:InfoElement.TitlePlacement="Left" hc:InfoElement.Title="密码   " Width="300" VerticalAlignment="Center" Margin="0 10 0 0"/>-->
                 <TextBox Style="{StaticResource TextBoxExtend}" 
                          Text="{Binding User.Password}"
-                 hc:InfoElement.TitlePlacement="Left" 
-                 hc:InfoElement.Title="密码   " Width="300" VerticalAlignment="Center" Margin="0 10 0 0"/>
+                         hc:InfoElement.TitlePlacement="Left" 
+                         hc:InfoElement.Title="密码   " Width="300" VerticalAlignment="Center" Margin="0 10 0 0"/>
                 <StackPanel Orientation="Vertical" Margin="0 10 0 0">
                     <TextBlock Text="{Binding Info}" Foreground="Red"/>
                     <Button Command="{Binding LoginCommand}" Width="300"> 登录 </Button>

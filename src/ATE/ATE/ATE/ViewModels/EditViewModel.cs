@@ -2,6 +2,7 @@
 using ATE.Service;
 using ATE.Service.Interface;
 using ATE.Services.Entities;
+using ATE.Stores;
 using ATE.Test.Contract;
 using Prism.Commands;
 using Prism.Regions;
@@ -14,14 +15,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Zoranof.Workflow;
 using Zoranof.WorkFlow;
+using Prism.Ioc;
 
 namespace ATE.ViewModels
 {
+    
+
     public class EditViewModel : RegionViewModelBase, IViewModel
     {
         private IDbService DbService { get; set; }
 
         private ObservableCollection<TestingProjectEntity> testingProjects;
+
+        public TestingStore TestingStore { get; set; } = ContainerLocator.Container.Resolve<TestingStore>();
 
         public ObservableCollection<TestingProjectEntity> TestingProjects { get => testingProjects; set => SetProperty(ref testingProjects, value); }
 

@@ -24,7 +24,8 @@ namespace ATE.ViewModels.Dialog
 
         private string info = "";
 
-        public string Info { get { return info; } set { SetProperty(ref info, value); } }
+        public string Info { get { return info; } set { 
+                SetProperty(ref info, value); } }
 
         public event Action<IDialogResult> RequestClose;
 
@@ -54,7 +55,7 @@ namespace ATE.ViewModels.Dialog
 
         public void Login()
         {
-            var users = DbService.Query<UserEntity>();
+             var users = DbService.Query<UserEntity>();
             var user = users.Where(x => x.Name == User.Name).FirstOrDefault();
             if (user == null)
             {

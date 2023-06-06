@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ATE.Views" xmlns:viewmodels="clr-namespace:ATE.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:TestViewModel}"
              mc:Ignorable="d" 
@@ -22,6 +23,38 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ExpandBtnStyle1" TargetType="CheckBox">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Border Background="Transparent" Width="15" Height="15" Cursor="Hand" CornerRadius="2">
+                            <Grid>
+                                <TextBlock  x:Name="ExpandIcon"
+                                            FontFamily="{StaticResource ATEIconFamily}" FontSize="15" Text="&#xe665;"  
+                                            RenderTransformOrigin="0.5, 0.5"
+                                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                            Foreground="{DynamicResource PrimaryBrush}">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform x:Name="ExpandIconTransform" Angle="0"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="RenderTransform"  TargetName="ExpandIcon" >
+                                    <Setter.Value>
+                                        <RotateTransform  Angle="90"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
     </UserControl.Resources>
     
     
@@ -33,7 +66,14 @@
         <Border x:Name="TestControlWidget" Padding="10">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button Margin="5"  Style="{StaticResource ButtonPrimary}">启动测试</Button>
+                    <Button Margin="5"  Style="{StaticResource ButtonPrimary}">启动测试
+
+                        <hc:FloatingBlock.ContentTemplate>
+                            <DataTemplate>
+                                <Path Stretch="Uniform" Data="{StaticResource BubbleTailGeometry}" Fill="{DynamicResource DangerBrush}" Width="16" Height="16"/>
+                            </DataTemplate>
+                        </hc:FloatingBlock.ContentTemplate>
+                    </Button>
                     <Button Margin="5" Style="{StaticResource ButtonPrimary}">停止测试</Button>
                 </StackPanel>
 
@@ -92,11 +132,11 @@
                                                                                 <RowDefinition Height="auto"/>
                                                                                 <RowDefinition/>
                                                                             </Grid.RowDefinitions>
-
                                                                             <Border  Background="#fff" BorderBrush="#eee" BorderThickness="0 0 0 2" Padding="5 10">
                                                                                 <Grid>
                                                                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                                                                        <TextBlock Text="&#xe665;" FontFamily="{StaticResource ATEIconFamily}" />
+                                                                                        <CheckBox IsChecked="{Binding IsExpand}" Style="{StaticResource ExpandBtnStyle1}"/>
+                                                                                        <!--<TextBlock Text="&#xe665;" FontFamily="{StaticResource ATEIconFamily}" Style="{StaticResource }"/>-->
                                                                                         <CheckBox IsChecked="{Binding IsToTest}" Margin="10 0 0 0"/>
                                                                                         <Border x:Name="ResultBiz">
                                                                                             <Ellipse Fill="#FC7267" Width="12" Height="12" Margin="10 0 0 0"/>
