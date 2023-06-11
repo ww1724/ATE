@@ -34,7 +34,7 @@
 
         <controls:MenuBar Grid.Column="0" Grid.Row="1" />
 
-        <Border Grid.Column="1" Grid.Row="1" Background="{DynamicResource ContentBg}" CornerRadius="8 8 0 0">
+        <Border Grid.Column="1" Grid.Row="1" Background="{DynamicResource ContentBg}" CornerRadius="16 16 0 0">
             <ContentControl x:Name="MainRegion"  prism:RegionManager.RegionName="{x:Static share:Constants.MainRegion}" />
         </Border>
     </Grid>

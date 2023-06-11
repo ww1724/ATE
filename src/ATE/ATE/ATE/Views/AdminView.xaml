@@ -58,7 +58,9 @@
                                         <TextBlock HorizontalAlignment="Center">数据库管理</TextBlock>
                                     </StackPanel>
                                 </Border>
-                                <Button >前往</Button>
+                                <Button Command="{Binding GlobalStore.NavigateToCommand}" 
+                                        CommandParameter="{x:Static share:Constants.Database}">
+                                    前往</Button>
                             </StackPanel>
                         </Border>
                         <Border BorderThickness="1 1 0 0" BorderBrush="#eee">
