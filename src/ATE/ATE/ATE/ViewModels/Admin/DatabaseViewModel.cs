@@ -42,9 +42,9 @@ namespace ATE.ViewModels.Admin
 
         public void OnCurrentEntityChanged()
         {
-            var type = typeof(DbService);
-            MethodInfo methodInfo = type.GetMethod("Query").MakeGenericMethod();
-            DataSets = new ObservableCollection<object>(methodInfo.Invoke(DbService, new object[] {}));
+            //var type = typeof(DbService);
+            //MethodInfo methodInfo = type.GetMethod("Query").MakeGenericMethod();
+            //DataSets = new ObservableCollection<object>(methodInfo.Invoke(DbService, new object[] {}));
         }
     }
 }
