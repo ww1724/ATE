@@ -20,8 +20,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Modules\ATE.Modules.ModuleName\ATE.Modules.ModuleName.csproj" />
-  </ItemGroup>
-
 </Project>

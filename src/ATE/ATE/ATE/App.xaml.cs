@@ -1,9 +1,7 @@
 ﻿using ATE.Common.Mvvm;
-using ATE.Modules.ModuleName;
 using ATE.Service;
 using ATE.Service.Interface;
 using ATE.Services;
-using ATE.Services.Interfaces;
 using ATE.Share;
 using ATE.Stores;
 using ATE.Test;
@@ -36,7 +34,6 @@ namespace ATE
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // services
-            containerRegistry.RegisterSingleton<IMessageService, MessageService>();
             containerRegistry.RegisterSingleton<IDbService, DbService>();
             containerRegistry.RegisterSingleton<ILoggerService, LoggerService>();
 
@@ -65,7 +62,7 @@ namespace ATE
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.AddModule<ModuleNameModule>();
+            //moduleCatalog.AddModule<ModuleNameModule>();
         }
     }
 }

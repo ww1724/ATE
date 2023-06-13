@@ -105,6 +105,8 @@ namespace ATE.Stores
 
     public class TestingRecord : BindableBase
     {
+        public TestingStep TestingStep { get; set; }
+
         private ObservableCollection<TestingStep> steps;
         public ObservableCollection<TestingStep> Steps
         {

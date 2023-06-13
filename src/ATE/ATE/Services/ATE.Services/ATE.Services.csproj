@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\ATE.Dal\ATE.Dal.csproj" />
     <ProjectReference Include="..\..\..\ATE.Share\ATE.Share.csproj" />
-    <ProjectReference Include="..\ATE.Services.Interfaces\ATE.Services.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

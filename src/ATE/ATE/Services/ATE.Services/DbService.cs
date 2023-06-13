@@ -40,7 +40,8 @@ namespace ATE.Service
                 typeof(ProductEntity),
                 typeof(UserEntity),
                 typeof(TestingCodeEntity),
-                typeof(TestingProjectEntity));
+                typeof(TestingProjectEntity),
+                typeof(ConfigurationEntity));
             if (!sugarClient.Queryable<UserEntity>().Any())
             {
                 sugarClient.InsertableByObject(new UserEntity
@@ -48,6 +49,28 @@ namespace ATE.Service
                     Name = "Zoran.Yang",
                     Role = "SuperAdmin",
                     Passwd = "db49172",
+                }).ExecuteCommand();
+            }
+
+            if (!sugarClient.Queryable<TestingProjectEntity>().Any())
+            {
+                sugarClient.InsertableByObject(new TestingProjectEntity
+                {
+                    Name="defautl",
+                    ClassType = "null",
+                    ProjectId = "-1",
+                    Steps = "",
+                    Title ="数据库初始化测试",
+                     WorkflowCode = ""
+                }).ExecuteCommand();
+            }
+
+            if (!sugarClient.Queryable<ConfigurationEntity>().Any())
+            {
+                sugarClient.InsertableByObject(new ConfigurationEntity
+                {
+                    Key="IsInitializeDb",
+                    Value="True"
                 }).ExecuteCommand();
             }
         }

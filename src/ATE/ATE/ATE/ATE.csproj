@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -30,8 +30,6 @@
     <ProjectReference Include="..\..\ATE.Test\ATE.Test.csproj" />
     <ProjectReference Include="..\..\Zoranof.UI.Wpf\src\Zoranof.UI.Wpf\Zoranof.UI.Wpf.csproj" />
     <ProjectReference Include="..\..\Zoranof.Workflow\Zoranof.Workflow.csproj" />
-    <ProjectReference Include="..\Modules\ATE.Modules.ModuleName\ATE.Modules.ModuleName.csproj" />
-    <ProjectReference Include="..\Services\ATE.Services.Interfaces\ATE.Services.Interfaces.csproj" />
     <ProjectReference Include="..\Services\ATE.Services\ATE.Services.csproj" />
   </ItemGroup>
   <ItemGroup>

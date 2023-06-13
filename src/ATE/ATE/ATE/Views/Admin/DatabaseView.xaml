@@ -17,7 +17,9 @@
                 <ComboBox SelectedIndex="0" HorizontalAlignment="Left"
                           ItemsSource="{Binding DbTypes}"
                           DisplayMemberPath="Key"
-                          SelectedValuePath="Value">
+                          SelectedValuePath="Value"
+                          SelectedValue="{Binding CurrentEntityType}"
+                          >
                 </ComboBox>
             </Grid>
         </Border>
@@ -26,7 +28,6 @@
             <Grid>
                 <DataGrid ItemsSource="{Binding DataSets}" >
                     <DataGrid.Columns>
-                        <DataGridComboBoxColumn Header="123465" DisplayIndex="5"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

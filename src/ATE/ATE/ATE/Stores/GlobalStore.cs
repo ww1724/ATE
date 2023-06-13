@@ -1,5 +1,4 @@
-﻿
-using ATE.Common.Mvvm;
+﻿using ATE.Common.Mvvm;
 using ATE.Share;
 using Prism.Commands;
 using Prism.Regions;
@@ -48,7 +47,7 @@ namespace ATE.Stores
             {
                 new MenuItem { Icon=(char)0xe83d, Text="测试中心", Path=Constants.TestBoard } ,
                 new MenuItem { Icon=(char)0xe683, Text="程序编辑", Path=Constants.EditBoard } ,
-                new MenuItem { Icon=(char)0xe807, Text="数据中心", Path=Constants.History } ,
+                //new MenuItem { Icon=(char)0xe807, Text="数据中心", Path=Constants.History } ,
                 new MenuItem { Icon=(char)0xe66d, Text="控制中心", Path=Constants.Admin } ,
             };
             CurrentMenu = MenuItems.FirstOrDefault();

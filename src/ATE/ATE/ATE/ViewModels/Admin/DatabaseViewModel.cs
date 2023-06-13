@@ -11,18 +11,19 @@ using ATE.Stores;
 using ATE.Services.Entities;
 using System.Linq;
 using System.Reflection;
+using SqlSugar;
+using System.Collections;
 
 namespace ATE.ViewModels.Admin
 {
     public class DatabaseViewModel : BindableBase, IViewModel
     {
         private Type currentEntityType;
+        private ObservableCollection<object> dataSets;
 
         public DbService DbService { get; set; } = ContainerLocator.Container.Resolve<DbService>();
 
-        public DataSet UniversalDataSet { get; set; }
-
-        public ObservableCollection<object> DataSets { get; set; }
+        public ObservableCollection<object> DataSets { get => dataSets; set { SetProperty(ref dataSets, value); } }
 
         public Dictionary<string, Type> DbTypes { get; set; }
 
@@ -42,9 +43,16 @@ namespace ATE.ViewModels.Admin
 
         public void OnCurrentEntityChanged()
         {
-            //var type = typeof(DbService);
-            //MethodInfo methodInfo = type.GetMethod("Query").MakeGenericMethod();
-            //DataSets = new ObservableCollection<object>(methodInfo.Invoke(DbService, new object[] {}));
+            var method = typeof(DbService).GetMethod("Query").MakeGenericMethod(CurrentEntityType);
+            //var datas =(List<object>)method.Invoke(DbService, new object[] { ""});
+            //IEnumerable datas = (IEnumerable)Activator.CreateInstance(typeof(List<>).MakeGenericType(CurrentEntityType));
+            IEnumerable datas = (IEnumerable)method.Invoke(DbService, new object[] { "" });
+            ObservableCollection<object> collection = new ObservableCollection<object> { };
+            foreach (var data in datas)
+            {
+                collection.Add(data);
+            }
+            DataSets = new ObservableCollection<object>(collection);
         }
     }
 }
