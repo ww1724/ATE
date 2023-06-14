@@ -5,6 +5,8 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace ATE.Stores
 {
@@ -63,6 +65,7 @@ namespace ATE.Stores
         public List<object> ChannelResults { get { return channelResults; } set { SetProperty(ref channelResults, value); } }
     }
 
+    [ExpandableObject]
     public class TestingStep : BindableBase
     {
         private string name;
@@ -71,6 +74,9 @@ namespace ATE.Stores
         private bool isToTest = true;
         private bool isExpand = false;
 
+        [Category("Information")]
+        [DisplayName("First Name")]
+        [Description("This property uses a TextBox as the default editor.")]
         public string Name { get { return name; } set { SetProperty(ref name , value); } }  
         public string Title { get { return title; } set { SetProperty(ref title, value); } }
         public string Description { get { return description; } set { SetProperty(ref description, value); } }
@@ -103,8 +109,10 @@ namespace ATE.Stores
     //    }
     //}
 
+    [ExpandableObject]
     public class TestingRecord : BindableBase
     {
+        [ExpandableObject]
         public TestingStep TestingStep { get; set; }
 
         private ObservableCollection<TestingStep> steps;
@@ -117,6 +125,7 @@ namespace ATE.Stores
 
     public class TestingStore : RegionViewModelBase, IViewModel
     {
+        [ExpandableObject]
         public TestingRecord TestingRecord { get; set; }
 
         public TestingStore(IRegionManager regionManager) : base(regionManager)

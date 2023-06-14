@@ -25,13 +25,13 @@
 
         <Border Grid.Column="0">
             <Grid>
-                <xctk:PropertyGrid  SelectedObject="{Binding TestingStore.TestingRecord}">
+                <xctk:PropertyGrid ShowDescriptionByTooltip="True"  SelectedObject="{Binding TestingStore.TestingRecord}">
                 </xctk:PropertyGrid>
             </Grid>
         </Border>
         <Border Grid.Column="1" BorderBrush="{DynamicResource SecondaryTextBrush}" BorderThickness="1 0 0 0">
             <Grid>
-                <pu:PropertyGrid   SelectedObject="{Binding TestingStore.TestingRecord}"></pu:PropertyGrid>
+                <pu:PropertyGrid  SelectedObject="{Binding TestingStore.TestingRecord}"></pu:PropertyGrid>
             </Grid>
         </Border>
     </Grid>
