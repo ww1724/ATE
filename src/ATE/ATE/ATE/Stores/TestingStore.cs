@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Dynamic;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace ATE.Stores
@@ -65,7 +66,6 @@ namespace ATE.Stores
         public List<object> ChannelResults { get { return channelResults; } set { SetProperty(ref channelResults, value); } }
     }
 
-    [ExpandableObject]
     public class TestingStep : BindableBase
     {
         private string name;
@@ -83,14 +83,14 @@ namespace ATE.Stores
         public bool IsToTest { get { return isToTest; } set { SetProperty(ref isToTest, value); } }
         public bool IsExpand { get { return isExpand; } set { SetProperty(ref isExpand, value); } }
 
-        private ObservableCollection<TestingParameter> parameters;
+        private ObservableCollection<TestingParameter> parameters = new ObservableCollection<TestingParameter>();
         public ObservableCollection<TestingParameter> Parameters
         {
             get { return parameters; }
             set { SetProperty(ref parameters, value); }
         }
 
-        private ObservableCollection<TestingResult> results;
+        private ObservableCollection<TestingResult> results = new ObservableCollection<TestingResult>();
         public ObservableCollection<TestingResult> Results
         {
             get { return results; }
@@ -109,10 +109,11 @@ namespace ATE.Stores
     //    }
     //}
 
-    [ExpandableObject]
     public class TestingRecord : BindableBase
     {
-        [ExpandableObject]
+        [Category("Conections")]
+        [Description("This property defines the [ExpandableObject()] attribute. This allows you to expand this property and drill down through its values.")]
+        [ExpandableObject()]
         public TestingStep TestingStep { get; set; }
 
         private ObservableCollection<TestingStep> steps;
@@ -121,15 +122,23 @@ namespace ATE.Stores
             get { return steps; }
             set { SetProperty(ref steps, value); }
         }
+
+        [ExpandableObject()]
+        public dynamic A { get; set; }
     }
 
     public class TestingStore : RegionViewModelBase, IViewModel
     {
+
+
+        [DisplayName("测试记录一号")]
         [ExpandableObject]
         public TestingRecord TestingRecord { get; set; }
 
         public TestingStore(IRegionManager regionManager) : base(regionManager)
         {
+
+
             var a = new TestingStep()
             {
                 Title = "300P调光最大",
@@ -161,6 +170,11 @@ namespace ATE.Stores
                 {
                 }
             };
+
+            TestingRecord.A = new ExpandoObject();
+            TestingRecord.A.Title = "I Got It";
+            TestingRecord.A.Name = "123456";
+
 
             TestingRecord.Steps.Add(new TestingStep()
             {
