@@ -74,8 +74,8 @@ namespace ATE.Stores
         private bool isToTest = true;
         private bool isExpand = false;
 
-        [Category("Information")]
-        [DisplayName("First Name")]
+        [Category("Step")]
+        [DisplayName("Name")]
         [Description("This property uses a TextBox as the default editor.")]
         public string Name { get { return name; } set { SetProperty(ref name , value); } }  
         public string Title { get { return title; } set { SetProperty(ref title, value); } }
@@ -114,7 +114,7 @@ namespace ATE.Stores
         [Category("Conections")]
         [Description("This property defines the [ExpandableObject()] attribute. This allows you to expand this property and drill down through its values.")]
         [ExpandableObject()]
-        public TestingStep TestingStep { get; set; }
+        public TestingStep TestingStep { get; set; } = new TestingStep();
 
         private ObservableCollection<TestingStep> steps;
         public ObservableCollection<TestingStep> Steps

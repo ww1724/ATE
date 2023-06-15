@@ -8,7 +8,6 @@ namespace ATE.Test.Contract
 {
     public interface IExecutionStep
     {
-
-        public void Execute();
+        public void Execute(IExecutionContext context);
     }
 }
